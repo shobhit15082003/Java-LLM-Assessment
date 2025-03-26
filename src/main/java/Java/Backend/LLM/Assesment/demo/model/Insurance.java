@@ -19,7 +19,7 @@ public class Insurance {
     private Long id;
 
     private String policyHolderName;
-    private String policyType;
+    private String provider;
     private Double coverageAmount;
     private Integer age;
     private String gender;
