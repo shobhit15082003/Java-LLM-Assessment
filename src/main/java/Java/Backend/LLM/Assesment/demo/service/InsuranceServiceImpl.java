@@ -27,7 +27,18 @@ public class InsuranceServiceImpl implements InsuranceService{
 
     @Override
     public String downloadInsurance(Integer age, String gender, Double income) {
-        List<Insurance>policies=insuranceRepository.findByAgeAndGenderAndIncome(age,gender,income);
+        List<Insurance> policies = insuranceRepository.findAll();
+
+        // Apply filters only if parameters are provided
+        if (age != null) {
+            policies = policies.stream().filter(policy -> policy.getAge().equals(age)).collect(Collectors.toList());
+        }
+        if (gender != null) {
+            policies = policies.stream().filter(policy -> policy.getGender().equalsIgnoreCase(gender)).collect(Collectors.toList());
+        }
+        if (income != null) {
+            policies = policies.stream().filter(policy -> policy.getIncome().equals(income)).collect(Collectors.toList());
+        }
 
         if(policies.isEmpty())
             return "";

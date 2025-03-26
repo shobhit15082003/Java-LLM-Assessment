@@ -32,9 +32,9 @@ public class InsuranceController {
 
     @GetMapping("/download")
     public ResponseEntity<ResponseWrapper<String>> downloadInsurance(
-            @RequestParam Integer age,
-            @RequestParam String gender,
-            @RequestParam Double income) {
+            @RequestParam(required = false) Integer age,
+            @RequestParam(required = false) String gender,
+            @RequestParam(required = false) Double income) {
         String policyDetails = insuranceService.downloadInsurance(age,gender,income);
 
         if(policyDetails.isEmpty()){
