@@ -20,11 +20,15 @@ public class Insurance {
 
     private String policyHolderName;
     private String policyType;
-    private double coverageAmount;
+    private Double coverageAmount;
+    private Integer age;
+    private String gender;
+    private Double income;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
 
 
 }
