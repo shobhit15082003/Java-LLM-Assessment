@@ -10,4 +10,16 @@ import java.util.List;
 public interface InsuranceRepository extends JpaRepository<Insurance,Long> {
 
     List<Insurance> findByAgeAndGenderAndIncome(Integer age, String gender, Double income);
+
+    List<Insurance> findByAgeAndGender(Integer age, String gender);
+
+    List<Insurance> findByAgeAndIncome(Integer age, Double income);
+
+    List<Insurance> findByGenderAndIncome(String gender, Double income);
+
+    List<Insurance> findByAge(Integer age);
+
+    List<Insurance> findByGender(String gender);
+
+    List<Insurance> findByIncome(Double income);
 }

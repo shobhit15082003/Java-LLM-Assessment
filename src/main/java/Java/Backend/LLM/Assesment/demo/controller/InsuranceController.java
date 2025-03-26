@@ -17,7 +17,7 @@ public class InsuranceController {
         this.insuranceService = insuranceService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<ResponseWrapper<List<Insurance>>> getAllInsurance(){
         List<Insurance>policies=insuranceService.getAllInsurance();
         return ResponseEntity.ok(new ResponseWrapper<>(200,"Insurance policie fetched successfully",policies));
