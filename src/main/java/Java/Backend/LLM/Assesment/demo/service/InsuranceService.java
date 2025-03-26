@@ -9,4 +9,5 @@ public interface InsuranceService {
     List<Insurance> getAllInsurance();
     Insurance purchaseInsurance(Insurance insurance);
     String downloadInsurance(Integer age,String gender, Double income);
+    Insurance createInsurance(Insurance insurance);
 }

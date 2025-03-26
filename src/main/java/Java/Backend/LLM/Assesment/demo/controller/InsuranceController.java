@@ -42,4 +42,11 @@ public class InsuranceController {
         }
         return ResponseEntity.ok(new ResponseWrapper<>(200,"Filtered insurance poilicies retrieved",policyDetails));
     }
+
+    @PostMapping("/create")
+    public ResponseEntity<ResponseWrapper<Insurance>> createInsurance(@RequestBody Insurance insurance) {
+        Insurance newInsurance = insuranceService.createInsurance(insurance);
+        return ResponseEntity.ok(new ResponseWrapper<>(201, "Insurance policy created successfully!", newInsurance));
+    }
+
 }

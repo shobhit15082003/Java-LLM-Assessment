@@ -50,4 +50,9 @@ public class InsuranceServiceImpl implements InsuranceService{
                 .collect(Collectors.joining("\n---------------------------------\n"));
     }
 
+    @Override
+    public Insurance createInsurance(Insurance insurance) {
+        return insuranceRepository.save(insurance);
+    }
+
 }
